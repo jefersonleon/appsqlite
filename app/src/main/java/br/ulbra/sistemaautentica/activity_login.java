@@ -17,6 +17,7 @@ public class activity_login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getSupportActionBar().hide();
         db = new DBHelper(this);
         edLogin = (EditText)findViewById(R.id.edLogin);
         edPass = (EditText)findViewById(R.id.edPass);

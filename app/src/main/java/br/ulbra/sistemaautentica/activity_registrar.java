@@ -17,7 +17,7 @@ public class activity_registrar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
         db = new DBHelper(this);
-
+        getSupportActionBar().hide();
         edNome = (EditText)findViewById(R.id.edNome);
         edUser = (EditText)findViewById(R.id.edUser);
         edPas1 = (EditText)findViewById(R.id.edPass1);
