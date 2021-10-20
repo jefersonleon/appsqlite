@@ -21,25 +21,26 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-           db.execSQL("DROP TABLE IF EXISTS utilizador;");
-           onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS utilizador;");
+        onCreate(db);
+
     }
     public long criarUtilizador(String userName, String password){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("username",userName);
         cv.put("password",password);
-        long result = db.insert("utilizador", null, cv);
-        return result;
+        long result = db.insert("utilizador", null,cv);
 
+        return result;
     }
     public String validarLogin(String userName, String password){
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM utilizador where username=? and password=?",
-                new String[]{userName,password});
+        Cursor c = db.rawQuery("Select * from utilizador where username=? and password=?", new String[] {userName,password});
         if(c.getCount()>0){
             return "OK";
         }
         return "ERRO";
     }
+
 }

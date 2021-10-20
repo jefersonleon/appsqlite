@@ -24,14 +24,15 @@ public class MainActivity extends AppCompatActivity {
         btCad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, CadastrarUsuario.class);
+                Intent i = new Intent(MainActivity.this, activity_registrar.class);
                 startActivity(i);
             }
         });
+
         btLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Activity_Login.class);
+                Intent i = new Intent(MainActivity.this, activity_login.class);
                 startActivity(i);
             }
         });
