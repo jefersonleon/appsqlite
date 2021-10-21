@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/yellow"
     tools:context=".activity_registrar">
 
     <EditText
         android:id="@+id/edNome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/edit"
+        android:background="@drawable/edit_das_entradas"
         android:layout_marginStart="24dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="24dp"
@@ -22,9 +23,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        style="@style/edit"
+        android:background="@drawable/edit_das_entradas"
         android:id="@+id/edUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/email_red"
+
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
@@ -37,24 +40,27 @@
         app:layout_constraintTop_toBottomOf="@+id/edNome" />
 
     <EditText
+        style="@style/pass"
+        android:background="@drawable/edit_das_entradas"
         android:id="@+id/edPass1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="Insira a senha"
+        android:drawableRight="@drawable/eye_red"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edUser" />
 
+
     <EditText
+        style="@style/pass"
         android:id="@+id/edPass2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="@drawable/edit_das_entradas"
+        android:drawableRight="@drawable/eye_red"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
@@ -66,13 +72,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edPass1" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btSalvar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:text="Salvar"
+        style="@style/button"
+
+        android:background="@drawable/button_arrendondado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

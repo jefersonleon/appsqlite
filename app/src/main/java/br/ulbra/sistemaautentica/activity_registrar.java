@@ -30,6 +30,7 @@ public class activity_registrar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String userName = edUser.getText().toString();
+                String name = edNome.getText().toString();
                 String pas1 = edPas1.getText().toString();
                 String pas2 = edPas2.getText().toString();
                 if (userName.equals("")) {
@@ -39,7 +40,8 @@ public class activity_registrar extends AppCompatActivity {
                 }else if(!pas1.equals(pas2)){
                     Toast.makeText(activity_registrar.this, "As senhas não correspondem ao login do usuário", Toast.LENGTH_SHORT).show();
                 }else{
-                    long res = db.criarUtilizador(userName,pas1);
+                    long res = db.criarUtilizador(userName, name, pas1);
+
                     if(res>0){
 //nesta parte você poderá chamar a tela principal do sistema autenticado
                         Toast.makeText(activity_registrar.this, "Resgistro OK", Toast.LENGTH_SHORT).show();

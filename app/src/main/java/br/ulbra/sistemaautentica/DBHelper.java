@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static String nome = "BancoDados.db";
+    private static String nome = "BancoDados1.db";
     private static int versao=1;
 
     public DBHelper(Context context){
@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String str = "CREATE TABLE utilizador(username TEXT PRIMARY KEY, password TEXT);";
+        String str = "CREATE TABLE utilizador(username TEXT PRIMARY KEY,name TEXT, password TEXT);";
         db.execSQL(str);
     }
 
@@ -25,10 +25,11 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
 
     }
-    public long criarUtilizador(String userName, String password){
+    public long criarUtilizador(String userName, String name, String password){
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("username",userName);
+        cv.put("name",name);
         cv.put("password",password);
         long result = db.insert("utilizador", null,cv);
 
